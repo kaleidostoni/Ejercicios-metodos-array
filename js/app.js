@@ -60,7 +60,10 @@ console.log(outputShiftLetters); // ---> 'ifmmp'
 var numberArray = [1,2,3,4,5,6,7,8,9,10];
 
 var evenNumbers = function(array) {
-  //Escribe tu codigo aquí.
+  arrayEven = array.filter(function(item){
+    return item %2 ==0;
+  })
+  console.log(arrayEven);
 };
 
 var outputEvenNumbers = evenNumbers(numberArray);
@@ -72,7 +75,10 @@ console.log(outputEvenNumbers); // ---> [2, 4, 6, 8, 10]
 // ejem. oddNumbers([1,2,3,4,5,6,7,8,9,10]) ---> [1, 3, 5, 7, 9]
 
 var oddNumbers = function(array) {
-  //Escribe tu codigo aquí
+  arrayOdd = array. filter (function(item){
+    return item %2 ==! 0;
+  })
+ console.log(arrayOdd); 
 };
 
 var outputOddNumbers = oddNumbers(numberArray);
@@ -87,8 +93,10 @@ console.log(outputOddNumbers); // ---> [1, 3, 5, 7, 9]
 
 Nota: Debes de hacer uso de las funciones de evenNumbers() y oddNumbers.*/
 
-var reducer = function() {
-  //Escribe tu codigo aquí
+var reducer = function(array) {
+ var newArrayEven = evenNumbers(array).reduce(function(valorInicial, valorActual){
+   return valorInicial +valorActual;
+ });
 
 }
 
