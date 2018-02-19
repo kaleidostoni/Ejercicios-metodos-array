@@ -8,9 +8,12 @@
  * ejem: capitalize("whoop") --->  "WHOOP" */
 
 var capitalize = function(str) {
-  //Escribe tu codigo aqui
-  // No puedes utilizar directamente sobre str toUpperCase
-
+  var toString = [str];
+  console.log(toString);
+  var capitalizedString = toString.map(function(array){
+    return array.toUpperCase();
+  })
+  console.log(capitalizedString);
 }
 
 //Utiliza console.log() para visualizar el funcionamiento de tu código.
@@ -114,10 +117,33 @@ var filterData = function(array){
   var newArray = array.filter(function(item){
      return item.tags==='javascript';
   })
-  console.log(newArray);
+  //console.log(newArray);
+  
+var newArrayTags = newArray.map(function(item2){
+  return item2.tags;
+}) 
+console.log(newArrayTags);
 }
 
+
 var outputFilterData = filterData(persons);
+
+
+/*otra opcion para concatenar métodos(usando directamente el array retornado del rimer método sin 
+tener que declara otra nueva variable para el segundo método)
+
+var filterData = function(array){
+  var newArray = array.filter(function(item){
+     return item.tags==='javascript';
+  }).map(function(item2){
+  return item2.tags;
+}) 
+console.log(newArrayTags);
+}
+
+
+var outputFilterData = filterData(persons);*/
+
 
 
 // 8. Render in DOM
