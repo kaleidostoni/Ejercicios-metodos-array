@@ -72,7 +72,7 @@ var oddNumbers = function(array) {
   //Escribe tu codigo aquí
 };
 
-var outputOdd = oddNumbers(numberArray);
+var outputOddNumbers = oddNumbers(numberArray);
 console.log(outputOddNumbers); // ---> [1, 3, 5, 7, 9]
 
 
@@ -109,13 +109,43 @@ var persons = [
   {id : 5, name : "Alex", tags : "java"}
 ];
 
+
+var filterData = function(array){
+  var newArray = array.filter(function(item){
+     return item.tags==='javascript';
+  })
+  console.log(newArray);
+}
+
+var outputFilterData = filterData(persons);
+
+
 // 8. Render in DOM
 /*Usando la data anterior y alguno de los métodos, pinta en el index.html a través del DOM
  cada una de las personas y todas sus propiedades */
 
-var paintPersons = function() {
+var paintPersons = function(array) {
+  var container = document.getElementById('container');
+  persons.forEach(function(element){
+    var person = document.createElement('div');
+    var name = document.createElement('h3');
+    var id = document.createElement('p');
+    var tags = document.createElement('p');    
+    
+    name.innerText = element.name;
+    id.innerText = element.id;
+    tags.innerText = element.tags;
 
+    person.appendChild(name);
+    person.appendChild(id);
+    person.appendChild(tags);
+    container.appendChild(person);
+    
+    //console.log(element.tags)
+  })
 }
+
+
 
 var outputPaintPerson = paintPersons(persons);
   
